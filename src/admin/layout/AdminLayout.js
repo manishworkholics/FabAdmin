@@ -2,17 +2,24 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 
-export default function AdminLayout(){
+export default function AdminLayout() {
   return (
-    <div className="flex">
+    <div className="flex h-screen bg-gray-50">
+      
+      {/* Sidebar */}
       <Sidebar />
 
-      <div className="flex-1 bg-gray-100 min-h-screen">
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        
+        {/* Header */}
         <Header />
 
-        <div className="p-6">
+        {/* Page Content */}
+        <main className="flex-1 overflow-y-auto p-6">
           <Outlet />
-        </div>
+        </main>
+
       </div>
     </div>
   );
